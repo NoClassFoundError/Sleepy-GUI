@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox prefHeight="500.0" prefWidth="800.0"
+      stylesheets="@style.css"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.lokins.sleepy.gui.controller.MainController">
+
+    <VBox fx:id="sidebar" prefWidth="180.0" spacing="10.0" styleClass="sidebar">
+        <padding>
+            <Insets top="20" right="10" bottom="20" left="10"/>
+        </padding>
+        <Label text="SLEEPY" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;">
+            <VBox.margin><Insets bottom="20"/></VBox.margin>
+        </Label>
+
+        <ToggleButton fx:id="navConnect" maxWidth="Infinity" text="连接服务器" onAction="#switchView"/>
+        <ToggleButton fx:id="navLog" maxWidth="Infinity" text="实时日志" onAction="#switchView"/>
+        <ToggleButton fx:id="navSettings" maxWidth="Infinity" text="设置" onAction="#switchView"/>
+
+        <Region VBox.vgrow="ALWAYS" />
+
+        <Button maxWidth="Infinity" text="退出" onAction="#handleExit" styleClass="exit-button"/>
+    </VBox>
+
+    <StackPane fx:id="contentArea" HBox.hgrow="ALWAYS" style="-fx-background-color: #f4f4f4;" />
+</HBox>

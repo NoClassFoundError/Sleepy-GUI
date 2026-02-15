@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.lokins.sleepy.gui.controller.ConnectViewController">
+    <padding>
+        <Insets top="30" right="40" bottom="30" left="40"/>
+    </padding>
+
+    <Label text="服务器连接" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <GridPane vgap="15" hgap="10">
+        <columnConstraints>
+            <ColumnConstraints minWidth="80" prefWidth="80" /> <ColumnConstraints hgrow="ALWAYS" />               <ColumnConstraints />                              </columnConstraints>
+
+        <Label text="服务器地址:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="serverUrlField" promptText="https://api.example.com"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Button fx:id="testConnBtn" text="测试连接" onAction="#handleTestConnection"
+                GridPane.rowIndex="0" GridPane.columnIndex="2" styleClass="secondary-button"/>
+
+        <Label text="验证密钥:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <PasswordField fx:id="secretField" promptText="Your Secret Key"
+                       GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+        <Label text="设备名称:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="deviceNameField" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                   GridPane.columnSpan="2"/>
+    </GridPane>
+
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <Button fx:id="startBtn" text="开始监控" onAction="#handleStart"
+                styleClass="primary-button" prefWidth="120"/>
+        <Button fx:id="saveConnBtn" text="保存配置" onAction="#handleSaveConfig"
+                styleClass="secondary-button" prefWidth="100"/>
+        <Label fx:id="statusLabel" text="状态: 未连接" style="-fx-text-fill: #7f8c8d;"/>
+    </HBox>
+</VBox>

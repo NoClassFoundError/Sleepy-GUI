@@ -1,0 +1,46 @@
+.sidebar {
+    -fx-background-color: #2c3e50; /* 深色背景 */
+}
+
+.sidebar .toggle-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ecf0f1;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 15;
+    -fx-background-radius: 5;
+}
+
+.sidebar .toggle-button:hover {
+    -fx-background-color: #34495e;
+}
+
+.sidebar .toggle-button:selected {
+    -fx-background-color: #3498db; /* 激活时的蓝色 */
+    -fx-text-fill: white;
+}
+
+.log-area {
+    -fx-control-inner-background: #1e1e1e; /* 深色背景 */
+    -fx-text-fill: #dcdcdc;                /* 浅灰色文字 */
+    -fx-font-family: "Consolas", "Courier New", monospace; /* 等宽字体 */
+    -fx-font-size: 13px;
+}
+
+.log-area .content {
+    -fx-padding: 10;
+}
+
+.primary-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+.primary-button:hover { -fx-background-color: #2980b9; }
+
+.log-area {
+    -fx-control-inner-background: #1e1e1e;
+    -fx-text-fill: #dcdcdc;
+    -fx-font-family: "Consolas", monospace;
+}

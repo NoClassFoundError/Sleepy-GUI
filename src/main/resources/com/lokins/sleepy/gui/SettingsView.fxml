@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.lokins.sleepy.gui.controller.SettingsViewController">
+    <padding>
+        <Insets top="30" right="40" bottom="30" left="40"/>
+    </padding>
+
+    <Label text="常规设置" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-border-color: #ddd; -fx-border-radius: 10;">
+
+        <VBox spacing="10">
+            <CheckBox fx:id="autoStartCheck" text="开机自动启动" onAction="#handleAutoStartChange"/>
+            <CheckBox fx:id="silentStartCheck" text="开机后自动最小化到托盘" style="-fx-translate-x: 25;"/>
+        </VBox>
+
+        <Separator />
+
+        <VBox spacing="8">
+            <Label text="执行程序位置:" style="-fx-font-weight: bold; -fx-text-fill: #666;"/>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <TextField fx:id="appPathField" HBox.hgrow="ALWAYS" promptText="请选择 Sleepy-GUI 执行文件路径" editable="false"/>
+                <Button text="浏览..." onAction="#handleBrowsePath" style="-fx-cursor: hand;"/>
+            </HBox>
+        </VBox>
+
+        <Separator />
+
+        <CheckBox fx:id="minimizeToTrayCheck" text="点击关闭按钮时最小化到系统托盘" selected="true"/>
+
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="数据检测间隔 (秒):" style="-fx-font-weight: bold; -fx-text-fill: #666;"/>
+            <TextField fx:id="intervalField" prefWidth="60.0" promptText="5" alignment="CENTER"/>
+            <Label text="秒" />
+        </HBox>
+    </VBox>
+
+    <HBox alignment="CENTER_RIGHT">
+        <Button text="保存更改" onAction="#saveSettings" styleClass="primary-button"
+                style="-fx-padding: 8 25; -fx-font-size: 14px; -fx-cursor: hand;"/>
+    </HBox>
+</VBox>
